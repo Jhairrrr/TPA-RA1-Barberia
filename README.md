@@ -7,7 +7,8 @@ arquitectura en capas, cola (FIFO) para la atención del día y pila (LIFO) para
 
 1. Instala Node.js (versión 18 o superior) desde https://nodejs.org
 2. Abre esta carpeta en VS Code: Archivo > Abrir carpeta.
-3. Abre la terminal (Ctrl + ñ) y ejecuta:
+3. Abre la terminal (Ctrl + ñ) y ejecuta: si sale error al instalar npm ejecutar este comando:
+Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
 
 ```bash
 npm install
