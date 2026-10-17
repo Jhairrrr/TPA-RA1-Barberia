@@ -1,0 +1,56 @@
+:root {
+  --tinta: #1d2730;
+  --papel: #f6f7f8;
+  --linea: #d5dbe0;
+  --rojo: #c4332b;
+  --azul: #27598a;
+  --verde: #1f7a4d;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--papel);
+  color: var(--tinta);
+  font-family: 'Barlow', system-ui, sans-serif;
+  line-height: 1.5;
+}
+h1, h2 { font-family: 'Barlow Condensed', 'Barlow', sans-serif; margin: 0 0 .5rem; }
+h1 { font-size: clamp(2.6rem, 8vw, 4rem); line-height: 1; letter-spacing: .01em; }
+h2 { font-size: 1.6rem; }
+.app { max-width: 62rem; margin: 0 auto; padding: 0 1rem 3rem; }
+.cabecera { padding: 2rem 0 1.25rem; }
+.cabecera p { margin: .25rem 0 1rem; color: #4b5a66; }
+.roles { display: flex; gap: .5rem; flex-wrap: wrap; }
+.roles button { border: 1px solid var(--tinta); background: transparent; padding: .45rem 1rem; border-radius: 999px; cursor: pointer; font: inherit; color: var(--tinta); }
+.roles button.activo { background: var(--tinta); color: #fff; }
+/* Poste de barbero: la pieza memorable del diseño */
+.poste {
+  height: 14px;
+  border-radius: 7px;
+  background: repeating-linear-gradient(-45deg, var(--rojo) 0 14px, #fff 14px 28px, var(--azul) 28px 42px, #fff 42px 56px);
+  border: 1px solid var(--tinta);
+  margin-bottom: 1.75rem;
+}
+.columnas { display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr)); align-items: start; }
+section { min-width: 0; }
+label { display: block; font-weight: 500; font-size: .95rem; margin-bottom: .75rem; }
+input, select {
+  display: block; width: 100%; margin-top: .25rem; padding: .55rem .65rem;
+  border: 1px solid var(--linea); border-radius: 6px; background: #fff; font: inherit; color: inherit;
+}
+input:focus-visible, select:focus-visible, button:focus-visible { outline: 3px solid var(--azul); outline-offset: 2px; }
+.fila { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
+button { font: inherit; cursor: pointer; border-radius: 6px; border: 1px solid var(--linea); background: #fff; padding: .45rem .9rem; color: var(--tinta); }
+button.primario { background: var(--rojo); border-color: var(--rojo); color: #fff; font-weight: 600; padding: .65rem 1.25rem; }
+button:disabled { opacity: .5; cursor: not-allowed; }
+.lista { list-style: none; padding: 0; margin: 1rem 0; display: grid; gap: .5rem; }
+.lista li { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: .75rem 1rem; background: #fff; border: 1px solid var(--linea); border-radius: 6px; }
+.lista small { color: #5a6a77; }
+.cola { counter-reset: puesto; }
+.cola li.siguiente { border-color: var(--azul); box-shadow: inset 4px 0 0 var(--azul); }
+.aviso { padding: .65rem 1rem; border-radius: 6px; margin: 0 0 1.25rem; font-weight: 500; }
+.aviso.ok { background: #e3f3ea; color: var(--verde); }
+.aviso.error { background: #fbe6e4; color: #9b241d; }
+.vacio, .nota { color: #5a6a77; font-size: .95rem; }
+@media (max-width: 30rem) { .fila { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
